@@ -24,10 +24,10 @@
   body{margin:0;background:var(--cream);
     background-image:radial-gradient(circle at 12% -10%, rgba(31,122,114,.06), transparent 40%),radial-gradient(circle at 110% 0%, rgba(181,137,60,.07), transparent 38%);
     color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
 
   header.site{background:var(--navy);background-image:linear-gradient(180deg,var(--navy-700),var(--navy) 60%,var(--navy-900));color:#EAF1F5;border-bottom:3px solid var(--gold)}
-  .head-inner{display:flex;align-items:center;gap:18px;padding:22px 24px;max-width:880px;margin:0 auto}
+  .head-inner{display:flex;align-items:center;gap:18px;padding:22px 24px;max-width:820px;margin:0 auto}
   .mark{display:flex;align-items:center;gap:14px}
   .cross{width:30px;height:38px;flex:none;position:relative}
   .cross::before,.cross::after{content:"";position:absolute;background:var(--gold-soft);border-radius:1px}
@@ -45,8 +45,8 @@
   .intro h1{font-family:'Fraunces',serif;font-weight:600;font-size:2rem;line-height:1.12;color:var(--navy);margin:0 0 12px}
   .intro p{color:var(--muted);max-width:66ch;margin:0 0 12px;font-size:.96rem}
   .intro p:last-child{margin-bottom:0}
-  .pull{border-left:4px solid var(--gold);background:var(--paper-warm);border-radius:0 12px 12px 0;padding:16px 22px;margin:20px 0}
-  .pull p{margin:0;font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.42;color:var(--navy);font-style:italic;max-width:none}
+  .pull{border-left:4px solid var(--gold);background:var(--paper-warm);border-radius:0 12px 12px 0;padding:16px 22px;margin:20px 0 4px}
+  .pull p{margin:0;font-family:'Fraunces',serif;font-size:1.08rem;line-height:1.42;color:var(--navy);font-style:italic;max-width:none}
   .pull cite{display:block;margin-top:8px;font-style:normal;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
 
   .block{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:30px 40px;margin-bottom:22px}
@@ -65,7 +65,7 @@
   .help{font-size:.82rem;color:var(--muted);margin:-2px 0 2px;font-weight:400;line-height:1.45}
   input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{
     font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--paper-warm);border:1px solid var(--line-strong);border-radius:9px;padding:11px 13px;width:100%;transition:border .15s,box-shadow .15s,background .15s}
-  textarea{resize:vertical;min-height:110px;line-height:1.5}
+  textarea{resize:vertical;min-height:100px;line-height:1.5}
   input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);background:#fff;box-shadow:0 0 0 3px rgba(31,122,114,.14)}
   input.invalid,select.invalid,textarea.invalid{border-color:var(--danger);box-shadow:0 0 0 3px rgba(178,58,58,.12)}
   select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23697789' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
@@ -78,9 +78,16 @@
   .grid-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   @media(max-width:560px){.grid-choices{grid-template-columns:1fr}}
 
+  details.sof{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;background:var(--paper-warm);padding:0;margin:2px 0 14px}
+  details.sof summary{cursor:pointer;padding:12px 16px;font-weight:600;font-size:.9rem;color:var(--navy);list-style:none}
+  details.sof summary::-webkit-details-marker{display:none}
+  details.sof summary::before{content:"▸ ";color:var(--gold)}
+  details.sof[open] summary::before{content:"▾ "}
+  details.sof .body{padding:2px 18px 14px;font-size:.86rem;line-height:1.5}
+  details.sof .body p{margin:0 0 8px}
+  details.sof .body strong{color:var(--navy);font-family:'Fraunces',serif}
+
   .callout{background:var(--teal-light);border:1px solid #BFDCD7;border-radius:12px;padding:14px 18px;font-size:.88rem;color:#1d4a46;margin-top:18px}
-  .onfile{display:flex;gap:10px;align-items:flex-start;background:var(--paper-warm);border:1px dashed var(--line-strong);border-radius:10px;padding:12px 16px;font-size:.85rem;color:var(--muted);margin-top:14px}
-  .onfile .ck{color:var(--teal);font-weight:700}
 
   .actionbar{position:sticky;bottom:0;z-index:30;background:rgba(251,248,241,.95);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;box-shadow:0 -10px 40px -26px rgba(16,42,67,.5);padding:14px 22px;display:flex;align-items:center;gap:16px;margin-top:6px}
   .save-status{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--muted);font-weight:600;opacity:0;transition:opacity .3s}
@@ -125,27 +132,20 @@
       <div class="cross" aria-hidden="true"></div>
       <div class="wordmark"><div class="org">The Colson Center</div><div class="sub">for Christian Worldview</div></div>
     </div>
-    <div class="head-right">Board of Directors<br>Application</div>
+    <div class="head-right">Board of Directors<br>Candidate Application</div>
   </div>
 </header>
 
 <div class="wrap">
   <main>
     <div class="intro">
-      <div class="eyebrow">Invited Candidates · Confidential</div>
+      <div class="eyebrow">Board Candidate · Confidential</div>
       <h1>Board of Directors Application</h1>
-      <p>Thank you for continuing in this process. You have already completed our initial screening, and the Board Development Committee has invited you to take a further step. This application goes deeper — less about your credentials, more about your convictions, your judgment, and your capacity for this particular board at this particular moment.</p>
+      <p>Thank you for your willingness to be considered for the Colson Center Board of Directors. This application helps us understand two things well: your alignment with our mission and theology, and how your gifts and experience might best serve this ministry. It takes about 15–20 minutes, and your answers are held in confidence by the Board Development Committee.</p>
 
       <div class="pull">
         <p>"Christianity is more than a relationship with Jesus. It is more than discipleship. It is a way of seeing and comprehending all reality."</p>
         <cite>Chuck Colson, Founder</cite>
-      </div>
-
-      <p>The Colson Center exists to equip Christians with the <strong>clarity, confidence, and courage</strong> to live out a Christian worldview in this cultural moment — and to form believers as restorers and reconcilers in every sphere of life. Please answer at whatever length the question deserves. Thoughtful, candid, specific answers serve you and us far better than polished ones.</p>
-
-      <div class="onfile">
-        <span class="ck">✓</span>
-        <span>Your contact details, testimony, church affiliation, references, doctrinal affirmation of our Statement of Faith, and disclosures are already on file from your screening. We only ask you to confirm how to reach you below.</span>
       </div>
     </div>
 
@@ -154,157 +154,159 @@
 
     <form id="appForm" novalidate>
 
-      <!-- IDENTITY -->
-      <section class="block" data-sec="Candidate">
-        <div class="num">Confirm</div>
-        <h2>How to reach you</h2>
-        <p class="sublead">So we can match this application to your screening file.</p>
-        <div class="field" data-label="Name"><label class="q" for="cName">Name<span class="req">*</span></label><input type="text" id="cName" name="Name" required></div>
+      <!-- 1 ABOUT YOU -->
+      <section class="block" data-sec="About You">
+        <div class="num">Section 1</div>
+        <h2>About you</h2>
+        <p class="sublead">A few essentials so we know who you are and how to reach you.</p>
+        <div class="grid g2">
+          <div class="field" data-label="Name"><label class="q" for="cName">Full name<span class="req">*</span></label><input type="text" id="cName" name="Name" required></div>
+          <div class="field" data-label="Preferred name"><label class="q" for="cPref">Preferred name</label><input type="text" id="cPref" name="Preferred name"></div>
+        </div>
         <div class="grid g2">
           <div class="field" data-label="Email"><label class="q" for="cEmail">Email<span class="req">*</span></label><input type="email" id="cEmail" name="Email" required></div>
           <div class="field" data-label="Phone"><label class="q" for="cPhone">Phone<span class="req">*</span></label><input type="tel" id="cPhone" name="Phone" required></div>
         </div>
+        <div class="grid g2">
+          <div class="field" data-label="Current role / organization"><label class="q" for="cRole">Current role / organization<span class="req">*</span></label><input type="text" id="cRole" name="Role/Organization" required></div>
+          <div class="field" data-label="Location"><label class="q" for="cLoc">Location<span class="req">*</span></label><input type="text" id="cLoc" name="Location" placeholder="City, State" required></div>
+        </div>
+        <div class="field" data-label="Church & involvement"><label class="q" for="cChurch">Your church and your involvement there<span class="req">*</span></label>
+          <p class="help">Congregation, membership status, and any way you serve or lead.</p>
+          <input type="text" id="cChurch" name="Church & involvement" required></div>
+        <div class="field" data-label="How you came to be considered"><label class="q" for="cIntro">How did you come to be considered for the board?</label>
+          <p class="help">If someone connected to the ministry invited you, feel free to name them.</p>
+          <input type="text" id="cIntro" name="How considered"></div>
       </section>
 
-      <!-- 1 CONVICTION -->
-      <section class="block" data-sec="Conviction & the Cultural Moment">
-        <div class="num">Section 1</div>
-        <h2>Conviction &amp; the cultural moment</h2>
-        <p class="sublead">Chuck Colson argued the Church had embraced the Great Commission but largely neglected the cultural commission — the call to engage, restore, and reconcile culture itself.</p>
-
-        <div class="field" data-label="Greatest deficit: clarity, confidence, or courage"><label class="q" for="q1">Our work aims to give Christians clarity, confidence, and courage. In your judgment, which of the three is the Church's greatest deficit right now — and what follows for how the Colson Center should spend its next five years?<span class="req">*</span></label>
-          <textarea id="q1" name="Greatest deficit and implications" required></textarea></div>
-
-        <div class="field" data-label="Where the Church most needs to be equipped"><label class="q" for="q2">Where do you see Christians most unprepared to think and live faithfully — and what would it take to actually change that, rather than simply naming it?<span class="req">*</span></label>
-          <textarea id="q2" name="Where the Church is unprepared" required></textarea></div>
-
-        <div class="field" data-label="Conviction at a cost"><label class="q" for="q3">Describe a time your Christian convictions carried a real cost — professionally, relationally, or publicly. What did you learn, and would you do it the same way again?<span class="req">*</span></label>
-          <p class="help">We are less interested in a victory story than in how you weigh cost, wisdom, and faithfulness.</p>
-          <textarea id="q3" name="Conviction at a cost" required></textarea></div>
-
-        <div class="field" data-label="Conviction and grace"><label class="q" for="q4">The Colson Center engages contested questions — human dignity and the sanctity of life, what it means to be human as embodied male and female, marriage and sexuality, religious freedom, and emerging challenges like AI and technology. How do you hold conviction and grace together without surrendering either? Give a specific example.<span class="req">*</span></label>
-          <textarea id="q4" name="Conviction and grace" required></textarea></div>
-
-        <div class="field" data-label="Issue depth and deference"><label class="q" for="q5">Of the issues above, which are you genuinely equipped to help this board think about — and on which would you defer to others?<span class="req">*</span></label>
-          <p class="help">Knowing the edge of one's competence is itself a governance strength.</p>
-          <textarea id="q5" name="Issue depth and deference" style="min-height:90px" required></textarea></div>
-      </section>
-
-      <!-- 2 MINISTRY -->
-      <section class="block" data-sec="The Colson Center's Mission & Legacy">
+      <!-- 2 THEOLOGICAL & MISSION FIT -->
+      <section class="block" data-sec="Theological & Mission Fit">
         <div class="num">Section 2</div>
-        <h2>Our mission &amp; legacy</h2>
-        <p class="sublead">Our work reaches the Church through Breakpoint, the Colson Fellows, Colson Educators, What Would You Say?, the Identity Project, Truth Rising, and the Institute for Christian Anthropology — often alongside partners such as Alliance Defending Freedom and the Association of Christian Schools International.</p>
+        <h2>Theological &amp; mission fit</h2>
+        <p class="sublead">The Colson Center is a Christ-centered ministry. Our board shares a common faith and a common conviction that Christianity is a way of seeing and comprehending all reality.</p>
 
-        <div class="field" data-label="Engagement with our work"><label class="q" for="q6">Which parts of our work do you know firsthand, and what is your honest assessment of them — including where you think we are weakest?<span class="req">*</span></label>
-          <p class="help">Candor is welcome. We would rather hear a real critique now than a courteous one later.</p>
-          <textarea id="q6" name="Assessment of our work" required></textarea></div>
+        <div class="field" data-label="Affirms Statement of Faith">
+          <span class="q">Statement of Faith<span class="req">*</span></span>
+          <p class="help">Our board members wholeheartedly affirm the Colson Center Statement of Faith. Please read it, then affirm below.</p>
+          <details class="sof">
+            <summary>Read the Colson Center Statement of Faith</summary>
+            <div class="body">
+              <p><strong>We believe</strong> that the Bible is God's inspired and authoritative Word. It is without error in all its teachings, including creation, history, its own origins, morality, and salvation. Christians must submit to its divine authority, both individually and corporately, in all matters of belief and conduct, which is demonstrated by true righteous living.</p>
+              <p><strong>We believe</strong> in one God, Creator and Lord of the Universe, the co-eternal Trinity: Father, Son, and Holy Spirit.</p>
+              <p><strong>We believe</strong> that Jesus Christ, God's Son, was conceived by the Holy Spirit, born of the Virgin Mary, lived a sinless life, died a substitutionary death on the cross, rose bodily from the dead and ascended to heaven where, as truly God and truly man, He is the only mediator between God and man.</p>
+              <p><strong>We believe</strong> God has created each human being, embodied as a male or a female, in His image, and that this gives sanctity to all human life from conception to natural death, and moral significance to our conduct of our bodies.</p>
+              <p><strong>We uphold</strong> the institution of marriage as the exclusive union of one man and one woman and as the sole relationship designed by God for sexual intimacy, as delineated in the Bible, which teaches that marriage is rooted in creation and points to the union of Christ and His Church.</p>
+              <p><strong>We believe</strong> that all people are lost sinners and cannot see the Kingdom of God except through the new birth. Justification is by grace through faith in Christ alone.</p>
+              <p><strong>We believe</strong> in the necessity of the work of the Holy Spirit for the individual's new birth and growth to maturity, and for the Church's constant renewal in truth, wisdom, faith, holiness, love, power, and mission.</p>
+              <p><strong>We believe</strong> in one holy, universal, and apostolic church. Christians are called to gather as the church to worship God and witness concerning Jesus Christ, the Head of the church, preaching the gospel among all nations, demonstrating compassionate service to the needs of human beings, and promoting righteousness and justice.</p>
+              <p><strong>We believe</strong> that Jesus Christ will personally and visibly return in glory to raise the dead and bring salvation and judgment to completion. God will fully manifest His kingdom when He establishes a new heaven and new earth, in which He will be glorified forever, and exclude all evil, suffering, and death.</p>
+            </div>
+          </details>
+          <label class="choice"><input type="checkbox" name="Affirms Statement of Faith" value="Affirmed without reservation" required><span>I have read and wholeheartedly affirm the Colson Center Statement of Faith.</span></label>
+        </div>
 
-        <div class="field" data-label="Stewarding a founder's legacy"><label class="q" for="q7">We carry a founder's name. How should a ministry steward a legacy like Chuck Colson's faithfully — without becoming a museum to it?<span class="req">*</span></label>
-          <textarea id="q7" name="Stewarding the founder's legacy" required></textarea></div>
+        <div class="field" data-label="Reservations regarding the Statement of Faith"><label class="q" for="sofNotes">Any reservation or clarification regarding the Statement of Faith?<span class="req">*</span></label>
+          <p class="help">If none, simply write "No reservations." Your honest input is welcome.</p>
+          <textarea id="sofNotes" name="Reservations" style="min-height:70px" required></textarea></div>
 
-        <div class="field" data-label="What you would contribute"><label class="q" for="q8">What would you specifically bring to this board that it likely does not already have?<span class="req">*</span></label>
-          <textarea id="q8" name="Distinct contribution" required></textarea></div>
+        <div class="field" data-label="Faith in daily life & leadership"><label class="q" for="q1">In a few sentences, how does a Christian worldview shape the way you live and lead day to day?<span class="req">*</span></label>
+          <textarea id="q1" name="Faith in life and leadership" required></textarea></div>
+
+        <div class="field" data-label="What draws you to the Colson Center"><label class="q" for="q2">What specifically draws you to the Colson Center's mission and work?<span class="req">*</span></label>
+          <p class="help">If you know our work — Breakpoint, the Colson Fellows, What Would You Say?, the Identity Project, Truth Rising, the Institute for Christian Anthropology — feel free to reference it.</p>
+          <textarea id="q2" name="What draws you to TCC" required></textarea></div>
+
+        <div class="field" data-label="Connection to Chuck Colson / the Colson Center / Colson Fellows"><label class="q" for="q2b">Do you have any prior connection to Chuck Colson, the Colson Center, or the Colson Fellows program?</label>
+          <p class="help">For example, a Colson Fellow or Centurion, a donor or ministry partner, a past event or program, or a personal relationship with Chuck Colson or John Stonestreet. If none, that is perfectly fine.</p>
+          <textarea id="q2b" name="Connection to Chuck Colson / TCC / Colson Fellows" style="min-height:80px"></textarea></div>
       </section>
 
-      <!-- 3 GOVERNANCE -->
-      <section class="block" data-sec="Governance Judgment">
+      <!-- 3 HOW YOU'D SERVE -->
+      <section class="block" data-sec="How You Would Serve">
         <div class="num">Section 3</div>
-        <h2>Governance judgment</h2>
-        <p class="sublead">Our board governs — setting direction, guarding mission fidelity and financial integrity, and supporting the CEO — as distinct from managing the ministry's work. Members serve on a volunteer basis and contribute through committees such as Executive, Audit &amp; Finance, and Theology.</p>
+        <h2>How you would serve</h2>
+        <p class="sublead">A healthy board brings complementary gifts. Help us understand what you would add.</p>
 
-        <div class="field" data-label="Governing vs. managing"><label class="q" for="q9">Describe a time you had to hold the line between governing and managing — when it would have been easier to reach into the staff's work. How did you handle it?<span class="req">*</span></label>
-          <textarea id="q9" name="Governing vs managing" required></textarea></div>
+        <div class="field" data-label="Competencies">
+          <span class="q">Which strengths would you bring to the board? <span class="help" style="display:inline">(Select all that apply)</span><span class="req">*</span></span>
+          <div class="grid-choices" id="compGrid" data-min="1"></div>
+        </div>
+        <div class="field" data-label="Other competency (specify)"><label class="q" for="compOther">If "Other," please specify</label><input type="text" id="compOther" name="Other competency"></div>
 
-        <div class="field" data-label="Dissent in the boardroom"><label class="q" for="q10">Tell us about a time you were the dissenting voice on a board or leadership team. What did you do when the decision went against you?<span class="req">*</span></label>
-          <textarea id="q10" name="Dissent and disagreement" required></textarea></div>
+        <div class="field" data-label="Board / governance experience"><label class="q" for="q3">Briefly describe your board or governance experience — organizations, roles, and whether nonprofit or for-profit.<span class="req">*</span></label>
+          <p class="help">If you have not served on a board before, describe your most relevant leadership experience.</p>
+          <textarea id="q3" name="Board/governance experience" required></textarea></div>
 
-        <div class="field" data-label="Mission fidelity vs. sustainability"><label class="q" for="q11">Suppose mission fidelity and financial sustainability pull in opposite directions — a faithful position proves costly to revenue. How should a board like ours reason through that?<span class="req">*</span></label>
-          <textarea id="q11" name="Mission fidelity vs sustainability" required></textarea></div>
+        <div class="field" data-label="Distinct contribution"><label class="q" for="q4">What would you uniquely contribute to this board that it may not already have?<span class="req">*</span></label>
+          <textarea id="q4" name="Distinct contribution" required></textarea></div>
 
-        <div class="field" data-label="Supporting and holding a CEO accountable"><label class="q" for="q12">How do you understand a board's dual responsibility to genuinely support a CEO and to hold that CEO accountable? Where do boards most often get this wrong?<span class="req">*</span></label>
-          <textarea id="q12" name="Board and CEO relationship" required></textarea></div>
+        <div class="field" data-label="Technology & AI perspective"><label class="q" for="q5">The Colson Center increasingly engages questions of technology and AI — in ministry, culture, and what it means to be human. What perspective or experience, if any, would you bring here?</label>
+          <p class="help">Optional. A strength here is welcome but not expected of every board member.</p>
+          <textarea id="q5" name="Technology & AI perspective" style="min-height:80px"></textarea></div>
 
         <div class="field" data-label="Committee interest">
-          <span class="q">Where would you most want to contribute? <span class="help" style="display:inline">(Select all that apply)</span><span class="req">*</span></span>
-          <div class="grid-choices" id="cmteGrid"></div>
+          <span class="q">What committee would you most want to contribute to? <span class="help" style="display:inline">(Select all that apply)</span><span class="req">*</span></span>
+          <div class="grid-choices" id="cmteGrid" data-min="1"></div>
         </div>
       </section>
 
-      <!-- 4 CAPACITY -->
-      <section class="block" data-sec="Capacity & Commitment">
+      <!-- 4 CAPACITY & GENEROSITY -->
+      <section class="block" data-sec="Capacity, Commitment & Generosity">
         <div class="num">Section 4</div>
-        <h2>Capacity &amp; commitment</h2>
-        <p class="sublead">Our board is national and meets in person approximately three times per year, with committee work and preparation between meetings. We would rather know your true capacity now than discover it later.</p>
+        <h2>Capacity, commitment &amp; generosity</h2>
+        <p class="sublead">As an ECFA-accredited ministry, we hold clear, honest expectations. Our national board meets in person approximately three times per year, with committee work in between, and board members serve on a volunteer basis.</p>
 
-        <div class="field" data-label="Travel and meeting commitment">
+        <div class="field" data-label="Meeting & travel commitment">
           <span class="q">Can you commit to approximately three in-person meetings per year, including travel?<span class="req">*</span></span>
           <div class="choices">
-            <label class="choice"><input type="radio" name="Travel commitment" value="Yes — without reservation" required><span>Yes — without reservation</span></label>
-            <label class="choice"><input type="radio" name="Travel commitment" value="Yes — with scheduling considerations"><span>Yes — with scheduling considerations (explained below)</span></label>
-            <label class="choice"><input type="radio" name="Travel commitment" value="Uncertain"><span>Uncertain — I would want to discuss this</span></label>
+            <label class="choice"><input type="radio" name="Meeting commitment" value="Yes — without reservation" required><span>Yes — without reservation</span></label>
+            <label class="choice"><input type="radio" name="Meeting commitment" value="Yes — with scheduling considerations"><span>Yes — with some scheduling considerations</span></label>
+            <label class="choice"><input type="radio" name="Meeting commitment" value="I would want to discuss this"><span>I would want to discuss this</span></label>
           </div>
         </div>
 
-        <div class="field" data-label="Current commitments and true capacity"><label class="q" for="q13">What else currently holds your time — boards, ministry, vocation, family season? Where would this board realistically rank, and what would you set down to make room for it?<span class="req">*</span></label>
-          <p class="help">A candid answer here is a mark of maturity, not a disqualifier.</p>
-          <textarea id="q13" name="Current commitments and capacity" required></textarea></div>
-
-        <div class="field" data-label="Term horizon"><label class="q" for="q14">Board service takes years to bear fruit. What is your honest horizon for this commitment, and what could realistically change it?<span class="req">*</span></label>
-          <textarea id="q14" name="Term horizon" style="min-height:90px" required></textarea></div>
-      </section>
-
-      <!-- 5 GENEROSITY -->
-      <section class="block" data-sec="Generosity & Advocacy">
-        <div class="num">Section 5</div>
-        <h2>Generosity &amp; advocacy</h2>
-        <p class="sublead">As an ECFA-accredited ministry, we ask every board member to be a personal financial supporter — giving meaningfully in proportion to their means — and to open doors as an ambassador for the work.</p>
+        <div class="field" data-label="Current commitments & capacity"><label class="q" for="q6">What other significant commitments hold your time right now — other boards, ministry, vocation, family season?<span class="req">*</span></label>
+          <p class="help">This helps us gauge realistic capacity. A candid answer is a mark of maturity.</p>
+          <textarea id="q6" name="Current commitments & capacity" style="min-height:80px" required></textarea></div>
 
         <div class="field" data-label="Personal giving">
-          <span class="q">Do you embrace the expectation that board members give personally and meaningfully, according to their ability?<span class="req">*</span></span>
+          <span class="q">We ask board members to be personal financial supporters, giving meaningfully in proportion to their means. Do you embrace this expectation?<span class="req">*</span></span>
           <div class="choices">
             <label class="choice"><input type="radio" name="Giving expectation" value="Yes — without reservation" required><span>Yes — without reservation</span></label>
             <label class="choice"><input type="radio" name="Giving expectation" value="Yes — with questions to discuss"><span>Yes — though I have questions I'd like to discuss</span></label>
-            <label class="choice"><input type="radio" name="Giving expectation" value="I would want to discuss this further"><span>I would want to discuss this further</span></label>
+            <label class="choice"><input type="radio" name="Giving expectation" value="I would want to discuss this"><span>I would want to discuss this</span></label>
           </div>
         </div>
 
-        <div class="field" data-label="Advocacy and doors you could open"><label class="q" for="q15">Beyond your own giving, how would you be an advocate for this ministry? What doors, networks, or relationships could you open — and are you willing to?<span class="req">*</span></label>
-          <textarea id="q15" name="Advocacy and networks" required></textarea></div>
+        <div class="field" data-label="Advocacy & networks"><label class="q" for="q7">Beyond personal giving, how might you serve as an ambassador for the ministry — what doors, networks, or relationships could you open?<span class="req">*</span></label>
+          <textarea id="q7" name="Advocacy & networks" style="min-height:80px" required></textarea></div>
+
+        <div class="field" data-label="Sense of calling"><label class="q" for="q8">Why this board, and why now? What makes you sense a call to serve here?<span class="req">*</span></label>
+          <textarea id="q8" name="Sense of calling" required></textarea></div>
       </section>
 
-      <!-- 6 DISCERNMENT -->
-      <section class="block" data-sec="Discernment & Fit">
-        <div class="num">Section 6</div>
-        <h2>Discernment &amp; fit</h2>
-        <p class="sublead">This is mutual discernment. We are not only evaluating you; you should be evaluating us.</p>
-
-        <div class="field" data-label="Sense of calling"><label class="q" for="q16">Why this board, and why now? What makes you sense this is a call rather than simply an opportunity?<span class="req">*</span></label>
-          <textarea id="q16" name="Sense of calling" required></textarea></div>
-
-        <div class="field" data-label="Your questions for us"><label class="q" for="q17">What questions do you have for the Board Development Committee? What would you need to learn about us before saying yes?<span class="req">*</span></label>
-          <textarea id="q17" name="Questions for the committee" required></textarea></div>
-
-        <div class="field" data-label="What would cause you to decline"><label class="q" for="q18">What would cause you to decline this invitation?<span class="req">*</span></label>
-          <textarea id="q18" name="What would cause you to decline" style="min-height:90px" required></textarea></div>
-
-        <div class="field" data-label="Updates since screening"><label class="q" for="q19">Has anything changed since your screening — in your circumstances, affiliations, capacity, or anything bearing on your disclosures — that we should know?<span class="req">*</span></label>
-          <p class="help">If nothing has changed, simply write "Nothing has changed."</p>
-          <textarea id="q19" name="Updates since screening" style="min-height:90px" required></textarea></div>
-      </section>
-
-      <!-- AFFIRM -->
-      <section class="block" data-sec="Affirmation">
+      <!-- 5 CONFIRMATION -->
+      <section class="block" data-sec="Confirmation">
         <div class="num">Final</div>
-        <h2>Affirmation &amp; signature</h2>
-        <div class="choices" style="margin-top:16px">
-          <label class="choice"><input type="checkbox" name="Reaffirms Statement of Faith" value="Affirmed" required><span><strong>Statement of Faith.</strong> I reaffirm the Colson Center Statement of Faith as affirmed in my screening, without reservation.</span></label>
-          <label class="choice"><input type="checkbox" name="Affirms candor" value="Affirmed" required><span><strong>Candor.</strong> The answers above are my own, and honestly represent my convictions and capacity.</span></label>
-          <label class="choice"><input type="checkbox" name="Affirms fiduciary readiness" value="Affirmed" required><span><strong>Fiduciary readiness.</strong> If elected, I will serve with the duties of care, loyalty, and obedience, placing the ministry's mission ahead of personal interest.</span></label>
+        <h2>Confirmation</h2>
+        <div class="field" data-label="Confirms accuracy" style="margin-top:14px">
+          <label class="choice"><input type="checkbox" name="Confirms accuracy" value="Confirmed" required><span><strong>Accuracy.</strong> The answers above are my own and honestly represent my convictions and capacity.</span></label>
         </div>
-        <div class="grid g2" style="margin-top:20px">
-          <div class="field" data-label="Signature"><label class="q" for="sig">Full legal name (electronic signature)<span class="req">*</span></label><input type="text" id="sig" name="Electronic signature" required></div>
-          <div class="field" data-label="Date"><label class="q" for="sdate">Date<span class="req">*</span></label><input type="date" id="sdate" name="Date" required></div>
+        <div class="field" data-label="Affirms fiduciary readiness">
+          <label class="choice"><input type="checkbox" name="Affirms fiduciary readiness" value="Confirmed" required><span><strong>Fiduciary readiness.</strong> If invited to serve, I will exercise the duties of care, loyalty, and obedience, placing the ministry's mission ahead of personal interest.</span></label>
+        </div>
+        <div class="field" data-label="Consent to follow-up">
+          <label class="choice"><input type="checkbox" name="Consent to follow-up" value="Confirmed" required><span><strong>Next steps.</strong> I understand the Board Executive Committee may follow up with references, interviews, or a background check.</span></label>
+        </div>
+
+        <div class="callout" style="margin-top:22px">
+          <strong style="display:block;margin-bottom:8px;font-size:.95rem">Completing &amp; sending your application</strong>
+          <ol style="margin:0;padding-left:20px;line-height:1.65">
+            <li>Answer each section. Required fields are marked with an asterisk (<span style="color:var(--danger)">*</span>). Your progress saves automatically as you go.</li>
+            <li>When you're finished, click <strong>Complete application</strong> below.</li>
+            <li>On the confirmation screen, click <strong>Download PDF</strong> to keep a copy for your records.</li>
+            <li>Then click <strong>Email application</strong> to open a pre-filled message — or attach your downloaded PDF and email it to <a href="mailto:pmarra@colsoncenter.org" style="color:var(--teal);font-weight:600">pmarra@colsoncenter.org</a>.</li>
+          </ol>
         </div>
 
         <div class="backup-row">
@@ -325,7 +327,7 @@
     <div class="success" id="success">
       <div class="seal">✓</div>
       <h2>Application Complete</h2>
-      <p>Thank you for the care you have given these questions. Download a PDF for your records, then send your application to the Board Development Committee using the button below. We will be in touch about next steps.</p>
+      <p>Thank you for the care you have given this. Download a PDF for your records, then send your application to the Board Development Committee using the button below. We will be in touch about next steps.</p>
       <div class="dl-row">
         <button type="button" class="btn btn-primary" id="dlBtn">Download PDF</button>
         <button type="button" class="btn btn-gold" id="emailBtn">Email application</button>
@@ -341,13 +343,11 @@ const form=document.getElementById('appForm');
 const errBanner=document.getElementById('errBanner');
 const RECIPIENT='pmarra@colsoncenter.org';
 
+const COMPETENCIES=["Theology / Worldview","Governance / Board Experience","Finance / Audit","Development / Fundraising","Organizational Leadership","Legal / HR","Communications / Media","Technology / AI / Digital","Church / Pastoral Leadership","Investment / Financial Markets","Public / Cultural Engagement","Education","Other"];
 const COMMITTEES=["Executive","Audit / Finance","Theology","Board Development","Development / Advancement","Wherever most needed"];
-const cg=document.getElementById('cmteGrid');
-COMMITTEES.forEach(c=>{
-  const l=document.createElement('label');l.className='choice';
-  l.innerHTML=`<input type="checkbox" name="Committee interest" value="${c}"><span>${c}</span>`;
-  cg.appendChild(l);
-});
+function fillGrid(id,list,name){const g=document.getElementById(id);list.forEach(v=>{const l=document.createElement('label');l.className='choice';l.innerHTML=`<input type="checkbox" name="${name}" value="${v}"><span>${v}</span>`;g.appendChild(l);});}
+fillGrid('compGrid',COMPETENCIES,'Competencies');
+fillGrid('cmteGrid',COMMITTEES,'Committee interest');
 
 function syncChoiceStyles(){form.querySelectorAll('.choice').forEach(c=>{const i=c.querySelector('input');if(i)c.classList.toggle('checked',i.checked);});}
 form.addEventListener('change',e=>{syncChoiceStyles();if(e.target.classList.contains('invalid'))e.target.classList.remove('invalid');debouncedSave();});
@@ -362,18 +362,13 @@ function collect(){
       const checks=[...f.querySelectorAll('input[type=checkbox]')];
       const radios=[...f.querySelectorAll('input[type=radio]')];
       let val='';
-      if(checks.length>1){ val=checks.filter(c=>c.checked).map(c=>c.value).join(', '); }
-      else if(checks.length===1){ val=checks[0].checked?(checks[0].value||'Confirmed'):''; }
-      else if(radios.length){ const r=radios.find(x=>x.checked); val=r?r.value:''; }
-      else { const el=f.querySelector('input,select,textarea'); val=el?el.value.trim():''; }
+      if(checks.length>1){val=checks.filter(c=>c.checked).map(c=>c.value).join(', ');}
+      else if(checks.length===1){val=checks[0].checked?(checks[0].value||'Affirmed'):'';}
+      else if(radios.length){const r=radios.find(x=>x.checked);val=r?r.value:'';}
+      else{const el=f.querySelector('input,select,textarea');val=el?el.value.trim():'';}
       rows.push([label,val]);
     });
-    // affirmation checkboxes sit outside .field wrappers
-    if(sec.dataset.sec==='Affirmation'){
-      const affirms=[...sec.querySelectorAll('.choices input[type=checkbox]')].filter(c=>c.checked).map(c=>c.name);
-      rows.unshift(['Affirmations',affirms.join('; ')||'—']);
-    }
-    if(rows.length) out.push({title:sec.dataset.sec,rows});
+    if(rows.length)out.push({title:sec.dataset.sec,rows});
   });
   return out;
 }
@@ -392,13 +387,15 @@ function validate(){
     } else if(!inp.value.trim()){inp.classList.add('invalid');if(!firstBad)firstBad=inp;}
     if(inp.type==='email'&&inp.value.trim()&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value)){inp.classList.add('invalid');if(!firstBad)firstBad=inp;}
   });
-  const anyC=[...form.querySelectorAll('input[name="Committee interest"]')].some(c=>c.checked);
-  if(!anyC && !firstBad) firstBad=document.getElementById('cmteGrid');
+  form.querySelectorAll('.grid-choices[data-min]').forEach(g=>{
+    const any=[...g.querySelectorAll('input')].some(c=>c.checked);
+    if(!any && !firstBad) firstBad=g;
+  });
   if(firstBad){
     errBanner.textContent='Please complete the highlighted required fields before submitting.';
     errBanner.classList.add('show');
     (firstBad.closest('.block')||firstBad).scrollIntoView({behavior:'smooth',block:'center'});
-    if(firstBad.focus) try{firstBad.focus({preventScroll:true});}catch(e){}
+    if(firstBad.focus)try{firstBad.focus({preventScroll:true});}catch(e){}
     return false;
   }
   return true;
@@ -449,7 +446,7 @@ document.getElementById('emailBtn').addEventListener('click',()=>{
 });
 
 /* autosave */
-const STORAGE_KEY='cc_board_application_v1';
+const STORAGE_KEY='cc_board_candidate_v1';
 let storageOK=true;
 try{const t='__t__';localStorage.setItem(t,'1');localStorage.removeItem(t);}catch(e){storageOK=false;}
 function serializeForm(){const o={};form.querySelectorAll('input,select,textarea').forEach(el=>{if(!el.name)return;if(el.type==='checkbox'||el.type==='radio'){if(!Array.isArray(o[el.name]))o[el.name]=[];if(el.checked)o[el.name].push(el.value);}else o[el.name]=el.value;});return o;}
