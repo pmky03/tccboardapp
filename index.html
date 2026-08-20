@@ -78,16 +78,29 @@
   .grid-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   @media(max-width:560px){.grid-choices{grid-template-columns:1fr}}
 
-  details.sof{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;background:var(--paper-warm);padding:0;margin:2px 0 14px}
-  details.sof summary{cursor:pointer;padding:12px 16px;font-weight:600;font-size:.9rem;color:var(--navy);list-style:none}
-  details.sof summary::-webkit-details-marker{display:none}
-  details.sof summary::before{content:"▸ ";color:var(--gold)}
-  details.sof[open] summary::before{content:"▾ "}
-  details.sof .body{padding:2px 18px 14px;font-size:.86rem;line-height:1.5}
+  /* yes / no rows */
+  .yn{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 18px;padding:11px 15px;border:1px solid var(--line-strong);border-radius:10px;background:var(--paper-warm)}
+  .yn .ynq{font-size:.92rem;font-weight:600;color:var(--ink);flex:1;min-width:220px;line-height:1.35}
+  .yn .opts{display:flex;gap:18px}
+  .yn .opts label{display:flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--navy);cursor:pointer}
+  .yn .opts input{accent-color:var(--teal);width:16px;height:16px}
+
+  details.sof,details.overview{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;background:var(--paper-warm);padding:0;margin:2px 0 14px}
+  details.sof summary,details.overview summary{cursor:pointer;padding:12px 16px;font-weight:600;font-size:.9rem;color:var(--navy);list-style:none}
+  details.sof summary::-webkit-details-marker,details.overview summary::-webkit-details-marker{display:none}
+  details.sof summary::before,details.overview summary::before{content:"\25B8 ";color:var(--gold)}
+  details.sof[open] summary::before,details.overview[open] summary::before{content:"\25BE "}
+  details.sof .body,details.overview .body{padding:2px 18px 14px;font-size:.86rem;line-height:1.5}
   details.sof .body p{margin:0 0 8px}
   details.sof .body strong{color:var(--navy);font-family:'Fraunces',serif}
+  details.overview .body h4{margin:12px 0 4px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+  details.overview .body ul{margin:0 0 6px;padding-left:18px}
+  details.overview .body li{margin-bottom:4px}
 
   .callout{background:var(--teal-light);border:1px solid #BFDCD7;border-radius:12px;padding:14px 18px;font-size:.88rem;color:#1d4a46;margin-top:18px}
+
+  .ref-card{border:1px solid var(--line-strong);border-radius:12px;padding:18px 18px 2px;margin-bottom:16px;background:var(--paper-warm)}
+  .ref-card .rh{font-family:'Fraunces',serif;font-weight:600;color:var(--navy);margin:0 0 12px;font-size:1rem}
 
   .actionbar{position:sticky;bottom:0;z-index:30;background:rgba(251,248,241,.95);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:14px;box-shadow:0 -10px 40px -26px rgba(16,42,67,.5);padding:14px 22px;display:flex;align-items:center;gap:16px;margin-top:6px}
   .save-status{display:flex;align-items:center;gap:7px;font-size:.78rem;color:var(--muted);font-weight:600;opacity:0;transition:opacity .3s}
@@ -139,14 +152,46 @@
 <div class="wrap">
   <main>
     <div class="intro">
-      <div class="eyebrow">Board Candidate · Confidential</div>
+      <div class="eyebrow">Board Candidate &middot; Confidential</div>
       <h1>Board of Directors Application</h1>
-      <p>Thank you for your willingness to be considered for the Colson Center Board of Directors. This application helps us understand two things well: your alignment with our mission and theology, and how your gifts and experience might best serve this ministry. It takes about 15–20 minutes, and your answers are held in confidence by the Board Development Committee.</p>
+      <p>Thank you for your willingness to be considered for the Colson Center Board of Directors. This application helps us understand your alignment with our mission and theology, and how your gifts and experience might best serve this ministry. Your answers are held in confidence by the Board Executive Committee.</p>
 
       <div class="pull">
         <p>"Christianity is more than a relationship with Jesus. It is more than discipleship. It is a way of seeing and comprehending all reality."</p>
         <cite>Chuck Colson, Founder</cite>
       </div>
+
+      <p>Please review what board service involves before you begin.</p>
+      <details class="overview">
+        <summary>Board Service Overview &amp; Expectations</summary>
+        <div class="body">
+          <h4>Board members are asked to</h4>
+          <ul>
+            <li>Serve as faithful stewards — exercising fiduciary care, governance leadership, and spiritual discernment</li>
+            <li>Maintain alignment with the Statement of Faith, mission, and worldview commitments</li>
+            <li>Attend and actively participate in board meetings and committee work</li>
+            <li>Provide thoughtful counsel while engaging with humility and respect</li>
+            <li>Pray consistently for the Colson Center</li>
+            <li>Support the ministry financially as they are able</li>
+          </ul>
+          <h4>Meeting expectations</h4>
+          <ul>
+            <li>Three in-person meetings annually (travel required):</li>
+            <li style="list-style:none;margin-left:-6px">&mdash; <strong>September</strong> (1.5 days): governance, policy, budget, compliance, and annual approvals</li>
+            <li style="list-style:none;margin-left:-6px">&mdash; <strong>January</strong> (2&ndash;2.5 days): strategic planning (spouses invited)</li>
+            <li style="list-style:none;margin-left:-6px">&mdash; <strong>Post-National Conference</strong> (1.5 days): follows the Colson Center National Conference (total ~4&ndash;5 days including the conference)</li>
+            <li>Committee service on Executive Governance, Theology, or Finance &amp; Audit, with virtual meetings of 1&ndash;2 hours between in-person gatherings</li>
+          </ul>
+          <h4>Financial &amp; travel</h4>
+          <ul>
+            <li>Lodging and meals are provided; travel may be reimbursed upon request</li>
+          </ul>
+          <h4>Term</h4>
+          <ul>
+            <li>Three-year term, renewable up to a maximum of three consecutive terms</li>
+          </ul>
+        </div>
+      </details>
     </div>
 
     <div class="resume" id="resumeBanner" style="display:none"></div>
@@ -154,37 +199,80 @@
 
     <form id="appForm" novalidate>
 
-      <!-- 1 ABOUT YOU -->
-      <section class="block" data-sec="About You">
+      <!-- 1 PERSONAL -->
+      <section class="block" data-sec="Personal Information">
         <div class="num">Section 1</div>
-        <h2>About you</h2>
-        <p class="sublead">A few essentials so we know who you are and how to reach you.</p>
+        <h2>Personal information</h2>
         <div class="grid g2">
-          <div class="field" data-label="Name"><label class="q" for="cName">Full name<span class="req">*</span></label><input type="text" id="cName" name="Name" required></div>
-          <div class="field" data-label="Preferred name"><label class="q" for="cPref">Preferred name</label><input type="text" id="cPref" name="Preferred name"></div>
+          <div class="field" data-label="Full name"><label class="q" for="fName">Full name<span class="req">*</span></label><input type="text" id="fName" name="Full name" required></div>
+          <div class="field" data-label="Preferred name"><label class="q" for="pName">Preferred name</label><input type="text" id="pName" name="Preferred name"></div>
         </div>
         <div class="grid g2">
-          <div class="field" data-label="Email"><label class="q" for="cEmail">Email<span class="req">*</span></label><input type="email" id="cEmail" name="Email" required></div>
-          <div class="field" data-label="Phone"><label class="q" for="cPhone">Phone<span class="req">*</span></label><input type="tel" id="cPhone" name="Phone" required></div>
+          <div class="field" data-label="Email"><label class="q" for="email">Email<span class="req">*</span></label><input type="email" id="email" name="Email" required></div>
+          <div class="field" data-label="Phone"><label class="q" for="phone">Phone<span class="req">*</span></label><input type="tel" id="phone" name="Phone" required></div>
         </div>
         <div class="grid g2">
-          <div class="field" data-label="Current role / organization"><label class="q" for="cRole">Current role / organization<span class="req">*</span></label><input type="text" id="cRole" name="Role/Organization" required></div>
-          <div class="field" data-label="Location"><label class="q" for="cLoc">Location<span class="req">*</span></label><input type="text" id="cLoc" name="Location" placeholder="City, State" required></div>
+          <div class="field" data-label="City / State"><label class="q" for="city">City / State<span class="req">*</span></label><input type="text" id="city" name="City/State" required></div>
+          <div class="field" data-label="Church affiliation"><label class="q" for="church">Church affiliation<span class="req">*</span></label><input type="text" id="church" name="Church affiliation" required></div>
         </div>
-        <div class="field" data-label="Church & involvement"><label class="q" for="cChurch">Your church and your involvement there<span class="req">*</span></label>
-          <p class="help">Congregation, membership status, and any way you serve or lead.</p>
-          <input type="text" id="cChurch" name="Church & involvement" required></div>
-        <div class="field" data-label="How you came to be considered"><label class="q" for="cIntro">How did you come to be considered for the board?</label>
-          <p class="help">If someone connected to the ministry invited you, feel free to name them.</p>
-          <input type="text" id="cIntro" name="How considered"></div>
       </section>
 
-      <!-- 2 THEOLOGICAL & MISSION FIT -->
-      <section class="block" data-sec="Theological & Mission Fit">
+      <!-- 2 PROFESSIONAL BACKGROUND -->
+      <section class="block" data-sec="Professional Background">
         <div class="num">Section 2</div>
-        <h2>Theological &amp; mission fit</h2>
-        <p class="sublead">The Colson Center is a Christ-centered ministry. Our board shares a common faith and a common conviction that Christianity is a way of seeing and comprehending all reality.</p>
+        <h2>Professional background</h2>
+        <div class="grid g2">
+          <div class="field" data-label="Current role / title"><label class="q" for="role">Current role / title<span class="req">*</span></label><input type="text" id="role" name="Role/Title" required></div>
+          <div class="field" data-label="Organization"><label class="q" for="org">Organization<span class="req">*</span></label><input type="text" id="org" name="Organization" required></div>
+        </div>
+        <div class="field" data-label="Career history & leadership experience"><label class="q" for="career">Please summarize your career history and areas of leadership experience.<span class="req">*</span></label>
+          <textarea id="career" name="Career history & leadership" style="min-height:120px" required></textarea></div>
+      </section>
 
+      <!-- 3 BOARD EXPERIENCE -->
+      <section class="block" data-sec="Board Experience">
+        <div class="num">Section 3</div>
+        <h2>Board experience</h2>
+        <div class="field" data-label="Served on a nonprofit board?">
+          <div class="yn"><span class="ynq">Have you served on a nonprofit Board of Directors?</span>
+            <span class="opts">
+              <label><input type="radio" name="Served on nonprofit board" value="Yes" required> Yes</label>
+              <label><input type="radio" name="Served on nonprofit board" value="No"> No</label>
+            </span>
+          </div>
+        </div>
+        <div class="field" data-label="Nonprofit boards & roles"><label class="q" for="boards">If yes, please list organizations and roles.</label>
+          <textarea id="boards" name="Nonprofit boards & roles" style="min-height:80px"></textarea></div>
+        <div class="field" data-label="National board or budget over $10MM?">
+          <div class="yn"><span class="ynq">Have you served on a national board, or a board with a budget over $10MM?</span>
+            <span class="opts">
+              <label><input type="radio" name="National or large board" value="Yes" required> Yes</label>
+              <label><input type="radio" name="National or large board" value="No"> No</label>
+            </span>
+          </div>
+        </div>
+        <div class="field" data-label="National / large board — description"><label class="q" for="bigboard">If yes, please describe briefly.</label>
+          <textarea id="bigboard" name="National/large board description" style="min-height:80px"></textarea></div>
+      </section>
+
+      <!-- 4 EXPERTISE -->
+      <section class="block" data-sec="Areas of Expertise">
+        <div class="num">Section 4</div>
+        <h2>Areas of expertise</h2>
+        <p class="sublead">Please indicate the areas where you bring meaningful experience.</p>
+        <div class="field" data-label="Areas of expertise">
+          <span class="q">Select all that apply<span class="req">*</span></span>
+          <div class="grid-choices" id="expGrid" data-min="1"></div>
+        </div>
+        <div class="field" data-label="Expertise comments"><label class="q" for="expComments">Comments — include certifications, depth of experience, and examples.<span class="req">*</span></label>
+          <textarea id="expComments" name="Expertise comments" style="min-height:110px" required></textarea></div>
+      </section>
+
+      <!-- 5 THEOLOGICAL FIT -->
+      <section class="block" data-sec="Theological & Mission Fit">
+        <div class="num">Section 5</div>
+        <h2>Theological &amp; mission fit</h2>
+        <p class="sublead">The Colson Center is a Christ-centered ministry, and our board shares a common faith and a common conviction that Christianity is a way of seeing and comprehending all reality.</p>
         <div class="field" data-label="Affirms Statement of Faith">
           <span class="q">Statement of Faith<span class="req">*</span></span>
           <p class="help">Our board members wholeheartedly affirm the Colson Center Statement of Faith. Please read it, then affirm below.</p>
@@ -204,88 +292,117 @@
           </details>
           <label class="choice"><input type="checkbox" name="Affirms Statement of Faith" value="Affirmed without reservation" required><span>I have read and wholeheartedly affirm the Colson Center Statement of Faith.</span></label>
         </div>
-
         <div class="field" data-label="Reservations regarding the Statement of Faith"><label class="q" for="sofNotes">Any reservation or clarification regarding the Statement of Faith?<span class="req">*</span></label>
           <p class="help">If none, simply write "No reservations." Your honest input is welcome.</p>
           <textarea id="sofNotes" name="Reservations" style="min-height:70px" required></textarea></div>
-
-        <div class="field" data-label="Faith in daily life & leadership"><label class="q" for="q1">In a few sentences, how does a Christian worldview shape the way you live and lead day to day?<span class="req">*</span></label>
-          <textarea id="q1" name="Faith in life and leadership" required></textarea></div>
-
-        <div class="field" data-label="What draws you to the Colson Center"><label class="q" for="q2">What specifically draws you to the Colson Center's mission and work?<span class="req">*</span></label>
-          <p class="help">If you know our work — Breakpoint, the Colson Fellows, What Would You Say?, the Identity Project, Truth Rising, the Institute for Christian Anthropology — feel free to reference it.</p>
-          <textarea id="q2" name="What draws you to TCC" required></textarea></div>
-
-        <div class="field" data-label="Connection to Chuck Colson / the Colson Center / Colson Fellows"><label class="q" for="q2b">Do you have any prior connection to Chuck Colson, the Colson Center, or the Colson Fellows program?</label>
-          <p class="help">For example, a Colson Fellow or Centurion, a donor or ministry partner, a past event or program, or a personal relationship with Chuck Colson or John Stonestreet. If none, that is perfectly fine.</p>
-          <textarea id="q2b" name="Connection to Chuck Colson / TCC / Colson Fellows" style="min-height:80px"></textarea></div>
       </section>
 
-      <!-- 3 HOW YOU'D SERVE -->
-      <section class="block" data-sec="How You Would Serve">
-        <div class="num">Section 3</div>
-        <h2>How you would serve</h2>
-        <p class="sublead">A healthy board brings complementary gifts. Help us understand what you would add.</p>
-
-        <div class="field" data-label="Competencies">
-          <span class="q">Which strengths would you bring to the board? <span class="help" style="display:inline">(Select all that apply)</span><span class="req">*</span></span>
-          <div class="grid-choices" id="compGrid" data-min="1"></div>
+      <!-- 6 CONNECTION -->
+      <section class="block" data-sec="Connection to The Colson Center">
+        <div class="num">Section 6</div>
+        <h2>Connection to the Colson Center</h2>
+        <div class="field" data-label="Previously engaged with TCC?">
+          <div class="yn"><span class="ynq">Have you previously engaged with the Colson Center?</span>
+            <span class="opts">
+              <label><input type="radio" name="Previously engaged" value="Yes" required> Yes</label>
+              <label><input type="radio" name="Previously engaged" value="No"> No</label>
+            </span>
+          </div>
         </div>
-        <div class="field" data-label="Other competency (specify)"><label class="q" for="compOther">If "Other," please specify</label><input type="text" id="compOther" name="Other competency"></div>
+        <div class="field" data-label="Describe your connection"><label class="q" for="conn">If yes, please describe.</label>
+          <p class="help">For example, a donor or ministry partner, a past event or program, or a personal relationship with Chuck Colson or John Stonestreet.</p>
+          <textarea id="conn" name="Connection description" style="min-height:80px"></textarea></div>
+        <div class="grid g2">
+          <div class="field" data-label="Colson Fellow (formerly Centurion)?">
+            <label class="q" for="fellow">Are you a Colson Fellow (formerly Centurion)?<span class="req">*</span></label>
+            <select id="fellow" name="Colson Fellow" required><option value=""></option><option>Yes</option><option>No</option></select>
+          </div>
+          <div class="field" data-label="Colson Fellow cohort / year"><label class="q" for="cohort">If yes, cohort / year</label><input type="text" id="cohort" name="Cohort/Year"></div>
+        </div>
+        <div class="field" data-label="Other worldview ministries"><label class="q" for="otherMin">Experience with other Christian worldview ministries</label>
+          <textarea id="otherMin" name="Other worldview ministries" style="min-height:70px"></textarea></div>
+      </section>
 
-        <div class="field" data-label="Board / governance experience"><label class="q" for="q3">Briefly describe your board or governance experience — organizations, roles, and whether nonprofit or for-profit.<span class="req">*</span></label>
-          <p class="help">If you have not served on a board before, describe your most relevant leadership experience.</p>
-          <textarea id="q3" name="Board/governance experience" required></textarea></div>
+      <!-- 7 TESTIMONY -->
+      <section class="block" data-sec="Personal Statement & Testimony">
+        <div class="num">Section 7</div>
+        <h2>Personal statement &amp; testimony</h2>
+        <p class="sublead">Please provide a brief bio (roughly 1&ndash;2 pages or equivalent).</p>
+        <div class="field" data-label="Personal statement & testimony"><label class="q" for="bio">Your statement &amp; testimony<span class="req">*</span></label>
+          <p class="help">Please include: personal background; education; career highlights; your Christian testimony; and any experience relevant to worldview formation, apologetics, or cultural engagement.</p>
+          <textarea id="bio" name="Personal statement & testimony" style="min-height:200px" required></textarea></div>
+      </section>
 
-        <div class="field" data-label="Distinct contribution"><label class="q" for="q4">What would you uniquely contribute to this board that it may not already have?<span class="req">*</span></label>
-          <textarea id="q4" name="Distinct contribution" required></textarea></div>
+      <!-- 8 BOARD FIT -->
+      <section class="block" data-sec="Board Fit & Commitment">
+        <div class="num">Section 8</div>
+        <h2>Board fit &amp; commitment</h2>
+        <div class="field" data-label="Why serve on the board"><label class="q" for="q1">Why are you interested in serving on the Board of the Colson Center?<span class="req">*</span></label>
+          <textarea id="q1" name="Why serve" required></textarea></div>
+        <div class="field" data-label="Gifts & contribution to the mission"><label class="q" for="q2">How do you see your gifts and experience contributing to the mission?<span class="req">*</span></label>
+          <textarea id="q2" name="Gifts & contribution" required></textarea></div>
+        <div class="field" data-label="Contributing to a culture of humility & trust"><label class="q" for="q3">Our board culture is marked by humility, trust, and valued relationships. How have you contributed to similar environments in past leadership roles?<span class="req">*</span></label>
+          <textarea id="q3" name="Board culture contribution" required></textarea></div>
 
-        <div class="field" data-label="Technology & AI perspective"><label class="q" for="q5">The Colson Center increasingly engages questions of technology and AI — in ministry, culture, and what it means to be human. What perspective or experience, if any, would you bring here?</label>
-          <p class="help">Optional. A strength here is welcome but not expected of every board member.</p>
-          <textarea id="q5" name="Technology & AI perspective" style="min-height:80px"></textarea></div>
-
-        <div class="field" data-label="Committee interest">
-          <span class="q">What committee would you most want to contribute to? <span class="help" style="display:inline">(Select all that apply)</span><span class="req">*</span></span>
+        <div class="field" data-label="Committee preference">
+          <span class="q">On which committee would you most want to serve? <span class="help" style="display:inline">(Select all that apply)</span><span class="req">*</span></span>
           <div class="grid-choices" id="cmteGrid" data-min="1"></div>
         </div>
+
+        <p class="sublead" style="margin:22px 0 10px;color:var(--ink);font-weight:600">If invited to join, are you able to:</p>
+        <div class="field" data-label="Able to attend meetings (incl. travel)">
+          <div class="yn"><span class="ynq">Attend the majority of board meetings, including travel?</span>
+            <span class="opts"><label><input type="radio" name="Able to attend" value="Yes" required> Yes</label><label><input type="radio" name="Able to attend" value="No"> No</label></span></div>
+        </div>
+        <div class="field" data-label="Able to serve on a committee">
+          <div class="yn"><span class="ynq">Actively participate on one or more committees?</span>
+            <span class="opts"><label><input type="radio" name="Able to serve on committee" value="Yes" required> Yes</label><label><input type="radio" name="Able to serve on committee" value="No"> No</label></span></div>
+        </div>
+        <div class="field" data-label="Able to pray regularly">
+          <div class="yn"><span class="ynq">Pray regularly for the ministry?</span>
+            <span class="opts"><label><input type="radio" name="Able to pray" value="Yes" required> Yes</label><label><input type="radio" name="Able to pray" value="No"> No</label></span></div>
+        </div>
+        <div class="field" data-label="Able to support financially">
+          <div class="yn"><span class="ynq">Support the ministry financially as you are able?</span>
+            <span class="opts"><label><input type="radio" name="Able to support financially" value="Yes" required> Yes</label><label><input type="radio" name="Able to support financially" value="No"> No</label></span></div>
+        </div>
       </section>
 
-      <!-- 4 CAPACITY & GENEROSITY -->
-      <section class="block" data-sec="Capacity, Commitment & Generosity">
-        <div class="num">Section 4</div>
-        <h2>Capacity, commitment &amp; generosity</h2>
-        <p class="sublead">As an ECFA-accredited ministry, we hold clear, honest expectations. Our national board meets in person approximately three times per year, with committee work in between, and board members serve on a volunteer basis.</p>
+      <!-- 9 REFERENCES -->
+      <section class="block" data-sec="References">
+        <div class="num">Section 9</div>
+        <h2>References</h2>
+        <p class="sublead">Please provide two or three references. At least one should be ministry- or board-related. By listing them, you give us permission to contact them.</p>
 
-        <div class="field" data-label="Meeting & travel commitment">
-          <span class="q">Can you commit to approximately three in-person meetings per year, including travel?<span class="req">*</span></span>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="Meeting commitment" value="Yes — without reservation" required><span>Yes — without reservation</span></label>
-            <label class="choice"><input type="radio" name="Meeting commitment" value="Yes — with scheduling considerations"><span>Yes — with some scheduling considerations</span></label>
-            <label class="choice"><input type="radio" name="Meeting commitment" value="I would want to discuss this"><span>I would want to discuss this</span></label>
+        <div class="ref-card">
+          <p class="rh">Reference 1</p>
+          <div class="grid g2">
+            <div class="field" data-label="Reference 1 — name"><label class="q" for="r1n">Name<span class="req">*</span></label><input type="text" id="r1n" name="Reference 1 — name" required></div>
+            <div class="field" data-label="Reference 1 — relationship"><label class="q" for="r1r">Relationship<span class="req">*</span></label><input type="text" id="r1r" name="Reference 1 — relationship" required></div>
           </div>
+          <div class="field" data-label="Reference 1 — contact"><label class="q" for="r1c">Contact information (email and/or phone)<span class="req">*</span></label><input type="text" id="r1c" name="Reference 1 — contact" required></div>
         </div>
 
-        <div class="field" data-label="Current commitments & capacity"><label class="q" for="q6">What other significant commitments hold your time right now — other boards, ministry, vocation, family season?<span class="req">*</span></label>
-          <p class="help">This helps us gauge realistic capacity. A candid answer is a mark of maturity.</p>
-          <textarea id="q6" name="Current commitments & capacity" style="min-height:80px" required></textarea></div>
-
-        <div class="field" data-label="Personal giving">
-          <span class="q">We ask board members to be personal financial supporters, giving meaningfully in proportion to their means. Do you embrace this expectation?<span class="req">*</span></span>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="Giving expectation" value="Yes — without reservation" required><span>Yes — without reservation</span></label>
-            <label class="choice"><input type="radio" name="Giving expectation" value="Yes — with questions to discuss"><span>Yes — though I have questions I'd like to discuss</span></label>
-            <label class="choice"><input type="radio" name="Giving expectation" value="I would want to discuss this"><span>I would want to discuss this</span></label>
+        <div class="ref-card">
+          <p class="rh">Reference 2</p>
+          <div class="grid g2">
+            <div class="field" data-label="Reference 2 — name"><label class="q" for="r2n">Name<span class="req">*</span></label><input type="text" id="r2n" name="Reference 2 — name" required></div>
+            <div class="field" data-label="Reference 2 — relationship"><label class="q" for="r2r">Relationship<span class="req">*</span></label><input type="text" id="r2r" name="Reference 2 — relationship" required></div>
           </div>
+          <div class="field" data-label="Reference 2 — contact"><label class="q" for="r2c">Contact information (email and/or phone)<span class="req">*</span></label><input type="text" id="r2c" name="Reference 2 — contact" required></div>
         </div>
 
-        <div class="field" data-label="Advocacy & networks"><label class="q" for="q7">Beyond personal giving, how might you serve as an ambassador for the ministry — what doors, networks, or relationships could you open?<span class="req">*</span></label>
-          <textarea id="q7" name="Advocacy & networks" style="min-height:80px" required></textarea></div>
-
-        <div class="field" data-label="Sense of calling"><label class="q" for="q8">Why this board, and why now? What makes you sense a call to serve here?<span class="req">*</span></label>
-          <textarea id="q8" name="Sense of calling" required></textarea></div>
+        <div class="ref-card">
+          <p class="rh">Reference 3 <span style="font-weight:400;color:var(--muted);font-family:'Hanken Grotesk',sans-serif;font-size:.85rem">(optional)</span></p>
+          <div class="grid g2">
+            <div class="field" data-label="Reference 3 — name"><label class="q" for="r3n">Name</label><input type="text" id="r3n" name="Reference 3 — name"></div>
+            <div class="field" data-label="Reference 3 — relationship"><label class="q" for="r3r">Relationship</label><input type="text" id="r3r" name="Reference 3 — relationship"></div>
+          </div>
+          <div class="field" data-label="Reference 3 — contact"><label class="q" for="r3c">Contact information (email and/or phone)</label><input type="text" id="r3c" name="Reference 3 — contact"></div>
+        </div>
       </section>
 
-      <!-- 5 CONFIRMATION -->
+      <!-- 10 CONFIRMATION -->
       <section class="block" data-sec="Confirmation">
         <div class="num">Final</div>
         <h2>Confirmation</h2>
@@ -305,7 +422,7 @@
             <li>Answer each section. Required fields are marked with an asterisk (<span style="color:var(--danger)">*</span>). Your progress saves automatically as you go.</li>
             <li>When you're finished, click <strong>Complete application</strong> below.</li>
             <li>On the confirmation screen, click <strong>Download PDF</strong> to keep a copy for your records.</li>
-            <li>Then click <strong>Email application</strong> to open a pre-filled message — or attach your downloaded PDF and email it to <a href="mailto:pmarra@colsoncenter.org" style="color:var(--teal);font-weight:600">pmarra@colsoncenter.org</a>.</li>
+            <li>Then click <strong>Email application</strong> to open a pre-filled message &mdash; or attach your downloaded PDF and email it to <a href="mailto:pmarra@colsoncenter.org" style="color:var(--teal);font-weight:600">pmarra@colsoncenter.org</a>.</li>
           </ol>
         </div>
 
@@ -325,15 +442,15 @@
     </form>
 
     <div class="success" id="success">
-      <div class="seal">✓</div>
+      <div class="seal">&#10003;</div>
       <h2>Application Complete</h2>
-      <p>Thank you for the care you have given this. Download a PDF for your records, then send your application to the Board Development Committee using the button below. We will be in touch about next steps.</p>
+      <p>Thank you for the care you have given this. Download a PDF for your records, then send your application to the Board Executive Committee using the button below. We will be in touch about next steps.</p>
       <div class="dl-row">
         <button type="button" class="btn btn-primary" id="dlBtn">Download PDF</button>
         <button type="button" class="btn btn-gold" id="emailBtn">Email application</button>
         <button type="button" class="btn btn-ghost" id="printBtn">Print</button>
       </div>
-      <p class="footnote">Questions? Contact the Board Development Committee at <a href="mailto:pmarra@colsoncenter.org">pmarra@colsoncenter.org</a>.<br>This application is held in strict confidence.</p>
+      <p class="footnote">Questions? Contact us at <a href="mailto:pmarra@colsoncenter.org">pmarra@colsoncenter.org</a>.<br>This application is held in strict confidence.</p>
     </div>
   </main>
 </div>
@@ -343,11 +460,11 @@ const form=document.getElementById('appForm');
 const errBanner=document.getElementById('errBanner');
 const RECIPIENT='pmarra@colsoncenter.org';
 
-const COMPETENCIES=["Theology / Worldview","Governance / Board Experience","Finance / Audit","Development / Fundraising","Organizational Leadership","Legal / HR","Communications / Media","Technology / AI / Digital","Church / Pastoral Leadership","Investment / Financial Markets","Public / Cultural Engagement","Education","Other"];
-const COMMITTEES=["Executive","Audit / Finance","Theology","Board Development","Development / Advancement","Wherever most needed"];
-function fillGrid(id,list,name){const g=document.getElementById(id);list.forEach(v=>{const l=document.createElement('label');l.className='choice';l.innerHTML=`<input type="checkbox" name="${name}" value="${v}"><span>${v}</span>`;g.appendChild(l);});}
-fillGrid('compGrid',COMPETENCIES,'Competencies');
-fillGrid('cmteGrid',COMMITTEES,'Committee interest');
+const EXPERTISE=["Leadership Development, Coaching & Succession Planning","Institutional Memory","Theology","Financial Experience","Development / Fundraising","Political Sphere","Church Leadership","Adult Education","Communications","Digital Strategy","Legal","Human Resources","Non-Profit Board Experience","Large / Complex Board Experience","Investment / Asset Management"];
+const COMMITTEES=["Executive Governance","Theology","Finance & Audit","No preference / wherever most needed"];
+function fillGrid(id,list,name){const g=document.getElementById(id);list.forEach(v=>{const l=document.createElement('label');l.className='choice';l.innerHTML='<input type="checkbox" name="'+name+'" value="'+v+'"><span>'+v+'</span>';g.appendChild(l);});}
+fillGrid('expGrid',EXPERTISE,'Areas of expertise');
+fillGrid('cmteGrid',COMMITTEES,'Committee preference');
 
 function syncChoiceStyles(){form.querySelectorAll('.choice').forEach(c=>{const i=c.querySelector('input');if(i)c.classList.toggle('checked',i.checked);});}
 form.addEventListener('change',e=>{syncChoiceStyles();if(e.target.classList.contains('invalid'))e.target.classList.remove('invalid');debouncedSave();});
@@ -363,7 +480,7 @@ function collect(){
       const radios=[...f.querySelectorAll('input[type=radio]')];
       let val='';
       if(checks.length>1){val=checks.filter(c=>c.checked).map(c=>c.value).join(', ');}
-      else if(checks.length===1){val=checks[0].checked?(checks[0].value||'Affirmed'):'';}
+      else if(checks.length===1){val=checks[0].checked?(checks[0].value||'Confirmed'):'';}
       else if(radios.length){const r=radios.find(x=>x.checked);val=r?r.value:'';}
       else{const el=f.querySelector('input,select,textarea');val=el?el.value.trim():'';}
       rows.push([label,val]);
@@ -373,8 +490,8 @@ function collect(){
   return out;
 }
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
-function candName(){return document.getElementById('cName').value.trim()||'Candidate';}
-function fileSlug(){return (document.getElementById('cName').value.trim()||'candidate').replace(/\s+/g,'-').toLowerCase();}
+function candName(){return document.getElementById('fName').value.trim()||'Candidate';}
+function fileSlug(){return (document.getElementById('fName').value.trim()||'candidate').replace(/\s+/g,'-').toLowerCase();}
 
 function validate(){
   errBanner.classList.remove('show');
@@ -382,7 +499,7 @@ function validate(){
   form.querySelectorAll('.invalid').forEach(el=>el.classList.remove('invalid'));
   form.querySelectorAll('[required]').forEach(inp=>{
     if(inp.type==='checkbox'||inp.type==='radio'){
-      const group=[...form.querySelectorAll(`[name="${CSS.escape(inp.name)}"]`)];
+      const group=[...form.querySelectorAll('[name="'+CSS.escape(inp.name)+'"]')];
       if(!group.some(g=>g.checked)){if(!firstBad)firstBad=inp;}
     } else if(!inp.value.trim()){inp.classList.add('invalid');if(!firstBad)firstBad=inp;}
     if(inp.type==='email'&&inp.value.trim()&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(inp.value)){inp.classList.add('invalid');if(!firstBad)firstBad=inp;}
@@ -412,23 +529,23 @@ function buildDocElement(){
   const data=collect();
   const el=document.createElement('div');
   el.style.cssText='width:760px;padding:40px;background:#fff;font-family:Georgia,serif;color:#16222E;line-height:1.5';
-  let html=`<h1 style="font-size:22px;color:#102A43;border-bottom:3px solid #B5893C;padding-bottom:8px;margin:0 0 4px">The Colson Center — Board of Directors Application</h1>
-    <div style="color:#697789;font-size:13px;margin-bottom:22px;font-family:Arial,sans-serif">Confidential &middot; Candidate: <strong>${escapeHtml(candName())}</strong> &middot; Generated ${new Date().toLocaleString()}</div>`;
+  let html='<h1 style="font-size:22px;color:#102A43;border-bottom:3px solid #B5893C;padding-bottom:8px;margin:0 0 4px">The Colson Center — Board of Directors Application</h1>'+
+    '<div style="color:#697789;font-size:13px;margin-bottom:22px;font-family:Arial,sans-serif">Confidential &middot; Candidate: <strong>'+escapeHtml(candName())+'</strong> &middot; Generated '+new Date().toLocaleString()+'</div>';
   data.forEach(sec=>{
-    html+=`<h2 style="font-size:15px;color:#1F7A72;margin:24px 0 4px;border-bottom:1px solid #ddd;padding-bottom:4px;page-break-after:avoid">${sec.title}</h2><table style="width:100%;border-collapse:collapse">`;
-    sec.rows.forEach(([q,a])=>{html+=`<tr><td style="width:34%;padding:7px 8px;vertical-align:top;font-size:12.5px;color:#697789;font-family:Arial,sans-serif;border-bottom:1px solid #eee">${escapeHtml(q)}</td><td style="padding:7px 8px;vertical-align:top;font-size:12.5px;border-bottom:1px solid #eee;white-space:pre-wrap">${a?escapeHtml(a):'—'}</td></tr>`;});
+    html+='<h2 style="font-size:15px;color:#1F7A72;margin:24px 0 4px;border-bottom:1px solid #ddd;padding-bottom:4px;page-break-after:avoid">'+sec.title+'</h2><table style="width:100%;border-collapse:collapse">';
+    sec.rows.forEach(function(row){var q=row[0],a=row[1];html+='<tr><td style="width:34%;padding:7px 8px;vertical-align:top;font-size:12.5px;color:#697789;font-family:Arial,sans-serif;border-bottom:1px solid #eee">'+escapeHtml(q)+'</td><td style="padding:7px 8px;vertical-align:top;font-size:12.5px;border-bottom:1px solid #eee;white-space:pre-wrap">'+(a?escapeHtml(a):'—')+'</td></tr>';});
     html+='</table>';
   });
   el.innerHTML=html;return el;
 }
-function buildDocHtml(){const t=buildDocElement();return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Board Application — ${escapeHtml(candName())}</title></head><body style="max-width:800px;margin:30px auto">${t.innerHTML}</body></html>`;}
+function buildDocHtml(){const t=buildDocElement();return '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Board Application — '+escapeHtml(candName())+'</title></head><body style="max-width:800px;margin:30px auto">'+t.innerHTML+'</body></html>';}
 
 document.getElementById('dlBtn').addEventListener('click',function(){
   const btn=this,orig=btn.textContent;
-  if(typeof html2pdf==='undefined'){const b=new Blob([buildDocHtml()],{type:'text/html'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=`colson-board-application-${fileSlug()}.html`;a.click();URL.revokeObjectURL(a.href);return;}
+  if(typeof html2pdf==='undefined'){const b=new Blob([buildDocHtml()],{type:'text/html'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='colson-board-application-'+fileSlug()+'.html';a.click();URL.revokeObjectURL(a.href);return;}
   btn.textContent='Preparing PDF…';btn.disabled=true;
   const el=buildDocElement();el.style.position='fixed';el.style.left='-10000px';el.style.top='0';document.body.appendChild(el);
-  html2pdf().set({margin:[12,10,14,10],filename:`colson-board-application-${fileSlug()}.pdf`,image:{type:'jpeg',quality:.98},html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'letter',orientation:'portrait'},pagebreak:{mode:['css','legacy']}}).from(el).save().then(()=>{el.remove();btn.textContent=orig;btn.disabled=false;}).catch(()=>{el.remove();btn.textContent=orig;btn.disabled=false;alert('PDF generation failed. Use Print to save as PDF instead.');});
+  html2pdf().set({margin:[12,10,14,10],filename:'colson-board-application-'+fileSlug()+'.pdf',image:{type:'jpeg',quality:.98},html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'letter',orientation:'portrait'},pagebreak:{mode:['css','legacy']}}).from(el).save().then(function(){el.remove();btn.textContent=orig;btn.disabled=false;}).catch(function(){el.remove();btn.textContent=orig;btn.disabled=false;alert('PDF generation failed. Use Print to save as PDF instead.');});
 });
 document.getElementById('printBtn').addEventListener('click',()=>{
   const w=window.open('','_blank');if(!w){alert('Please allow pop-ups to print, or use Download PDF.');return;}
@@ -437,20 +554,20 @@ document.getElementById('printBtn').addEventListener('click',()=>{
 function buildEmailBody(){
   const data=collect();
   let lines=['THE COLSON CENTER — BOARD OF DIRECTORS APPLICATION','Confidential','Candidate: '+candName(),'Submitted: '+new Date().toLocaleString(),'==================================================',''];
-  data.forEach(sec=>{lines.push('— '+sec.title.toUpperCase()+' —');sec.rows.forEach(([q,a])=>{lines.push(q+':');lines.push('  '+(a||'—'));lines.push('');});lines.push('');});
+  data.forEach(sec=>{lines.push('— '+sec.title.toUpperCase()+' —');sec.rows.forEach(function(row){lines.push(row[0]+':');lines.push('  '+(row[1]||'—'));lines.push('');});lines.push('');});
   return lines.join('\n');
 }
 document.getElementById('emailBtn').addEventListener('click',()=>{
   const subj=encodeURIComponent('Board of Directors Application — '+candName());
-  window.location.href=`mailto:${RECIPIENT}?subject=${subj}&body=${encodeURIComponent(buildEmailBody())}`;
+  window.location.href='mailto:'+RECIPIENT+'?subject='+subj+'&body='+encodeURIComponent(buildEmailBody());
 });
 
 /* autosave */
-const STORAGE_KEY='cc_board_candidate_v1';
+const STORAGE_KEY='cc_board_candidate_v2';
 let storageOK=true;
 try{const t='__t__';localStorage.setItem(t,'1');localStorage.removeItem(t);}catch(e){storageOK=false;}
 function serializeForm(){const o={};form.querySelectorAll('input,select,textarea').forEach(el=>{if(!el.name)return;if(el.type==='checkbox'||el.type==='radio'){if(!Array.isArray(o[el.name]))o[el.name]=[];if(el.checked)o[el.name].push(el.value);}else o[el.name]=el.value;});return o;}
-function getState(){return {v:1,savedAt:Date.now(),fields:serializeForm()};}
+function getState(){return {v:2,savedAt:Date.now(),fields:serializeForm()};}
 function applyState(st){if(!st||!st.fields)return;const f=st.fields;form.querySelectorAll('input,select,textarea').forEach(el=>{if(!el.name||!(el.name in f))return;const v=f[el.name];if(el.type==='checkbox'||el.type==='radio')el.checked=Array.isArray(v)&&v.includes(el.value);else el.value=v;});syncChoiceStyles();}
 function loadState(){try{const s=localStorage.getItem(STORAGE_KEY);return s?JSON.parse(s):null;}catch(e){return null;}}
 function clearProgress(){try{localStorage.removeItem(STORAGE_KEY);}catch(e){}const el=document.getElementById('saveStatus');if(el)el.classList.remove('show');}
@@ -460,9 +577,9 @@ let saveTimer=null;function debouncedSave(){clearTimeout(saveTimer);saveTimer=se
 function showResumeBanner(saved){
   const b=document.getElementById('resumeBanner');
   const when=saved.savedAt?new Date(saved.savedAt).toLocaleString():'earlier';
-  b.innerHTML=`<p><strong>Welcome back.</strong> We restored the draft you saved ${when}.</p><button type="button" class="btn btn-ghost" id="startOverBtn">Start over</button>`;
+  b.innerHTML='<p><strong>Welcome back.</strong> We restored the draft you saved '+when+'.</p><button type="button" class="btn btn-ghost" id="startOverBtn">Start over</button>';
   b.style.display='flex';
-  document.getElementById('startOverBtn').onclick=()=>{clearProgress();form.reset();syncChoiceStyles();b.style.display='none';};
+  document.getElementById('startOverBtn').onclick=function(){clearProgress();form.reset();syncChoiceStyles();b.style.display='none';};
 }
 document.getElementById('saveFileBtn').addEventListener('click',()=>{
   const blob=new Blob([JSON.stringify(getState(),null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='colson-board-application-draft.json';a.click();URL.revokeObjectURL(a.href);
@@ -470,7 +587,7 @@ document.getElementById('saveFileBtn').addEventListener('click',()=>{
 document.getElementById('loadFileBtn').addEventListener('click',()=>document.getElementById('loadFileInput').click());
 document.getElementById('loadFileInput').addEventListener('change',ev=>{
   const file=ev.target.files[0];if(!file)return;const r=new FileReader();
-  r.onload=()=>{try{applyState(JSON.parse(r.result));saveProgress();window.scrollTo({top:0,behavior:'smooth'});}catch(e){alert('Sorry — that file could not be read as a saved draft.');}ev.target.value='';};
+  r.onload=function(){try{applyState(JSON.parse(r.result));saveProgress();window.scrollTo({top:0,behavior:'smooth'});}catch(e){alert('Sorry — that file could not be read as a saved draft.');}ev.target.value='';};
   r.readAsText(file);
 });
 
